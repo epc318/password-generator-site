@@ -1,4 +1,4 @@
-# Portfolio
+# Random Password Generator
 
 ## Purpose
 This repository contains the HTML, CSS, JavaScript, and other related elements that the password generator site
@@ -7,7 +7,7 @@ This repository contains the HTML, CSS, JavaScript, and other related elements t
 To generate a random password from a range of several requirements including case, length, special charaters, etc.
 
 #### Live Website URL
-
+https://epc318.github.io/password-generator-site/
 
 ## Source Code Example:
 
