@@ -2,8 +2,42 @@
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
+// creating/defining generatePassword function
 function generatePassword() {
+  console.log("we click it cuh");
+
+  //1.) prompt the user for password criteria
+  var promptStart = window.confirm('Would You Like Generate a password?')
+      
+     // if user picks "cancel", confirm and refresh page to start
+      if (promptStart === false) {
+        var confirmSkip = window.confirm("Are you sure?")
+        if (confirmSkip) {
+          return "Bye Bye";
+          break;
+        }
+    }
+
+      
+    // if user picks "ok," continue to next prompt
+    if (promptStart === true)
+
+    
+
+
   
+
+
+  // a. password length between8 and 128
+  // b. include lowercase, uppercase, numeric, or special characters.
+
+
+  //2.) validate input
+  //3. generate password based on criteria
+  
+  
+  //4.) display password on page (return)
+  return "genreated password will go here";
 }
 
 
