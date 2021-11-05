@@ -19,28 +19,29 @@ function generatePassword() {
 
      // a. password length between8 and 128
   var promptLength = window.prompt('How many charaters would you like your password to be? (Must be 7 < 129)')
-
-      while (promptStart === true) {
-        
+      
+       while (promptLength >= 129 || promptLength <= 7) {
         if (promptLength >= 129 || promptLength <= 7) {
       window.alert("Invalid number! Please enter another.");
+      
       }
-
-      if (promptLength < 129 || promptLength > 7) {
-        promptLength = (this) 
-      }
+      if (promptLength < 129 || promptLength > 7)
       break;
     }
     
 
   // b. include lowercase, uppercase, numeric, or special characters?
-  var promptLower = windowconfirm('Would you like to include lowercase letters?')
+ // var promptLower = windowconfirm('Would you like to include lowercase letters?')
+
+     // if (promptLower === false)
    
-  var promptUpper = windowconfirm('Would you like to include uppercase letters?')
+//  var promptUpper = windowconfirm('Would you like to include uppercase letters?')
 
-  var promptNumeric = windowconfirm('Would you like to include numeric values?')
+     // if (promptUpper === false)
 
-  var promptSpecial = windowconfirm('Would you like to include special characters?')
+ // var promptNumeric = windowconfirm('Would you like to include numeric values?')
+
+  //var promptSpecial = windowconfirm('Would you like to include special characters?')
   
   
   
