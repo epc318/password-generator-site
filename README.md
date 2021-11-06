@@ -10,7 +10,7 @@ To generate a random password from a range of several requirements including cas
 https://epc318.github.io/password-generator-site/
 
 ## Source Code Example:
-![alt text](https://github.com/epc318/password-generator-site/blob/main/Develop/images/source_code_ex.PNG)
+![Password Generator Site Source Code](https://github.com/epc318/password-generator-site/blob/main/Develop/images/source_code_ex.PNG)
 
 ## Built With
 * HTML
