@@ -2,12 +2,18 @@
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
-
+// Assigned variables
+var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var lowercase = "abcdefghijklmnopqrstuvwxyz";
+var numbers = "0123456789";
+var specialChar = "!@,#$%&*{}[]/\\+=";
+var chosenCharacters = "";
 
 
 // creating/defining generatePassword function
 function generatePassword() {
-  console.log("we click it cuh");
+//Start user prompt process/get the necessary dasta for random gen
+var result = "";
 
   //1. prompt the user for password criteria
   var promptStart = window.confirm('Would You Like Generate a password?')
@@ -22,18 +28,15 @@ function generatePassword() {
 
      // a. password length between8 and 128
   
-  var goodLength = false
-
-       do {
-       var promptLength = window.prompt('How many characters would you like your password to be? (Must be 7 < 129)')
-       if (promptLength >= 129 || promptLength <= 7) {
-        window.alert("Invalid number! Please enter another.");
-      if (promptLength < 129 || promptLength > 7)
-      goodLength = true
-    }
-       }
-     
-       while (goodLength === false)
+     var promptLength = prompt("How many characters in your random password? (between 8 and 128)");
+     if(isNaN(promptLength)){
+       alert("You must input a number!");
+       return generatePassword()
+     }
+     if(promptLength<8 || promptLength> 128){
+       alert("Invalid number! Please choose numbers between 8 - 128.");
+       return generatePassword()
+     }
     
 
   // b. include lowercase, uppercase, numeric, or special characters?
