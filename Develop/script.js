@@ -6,7 +6,7 @@ var generateBtn = document.querySelector("#generate");
 var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var lowercase = "abcdefghijklmnopqrstuvwxyz";
 var numbers = "0123456789";
-var specialChar = "!@,#$%&*=|-{}_();:?~`[]/\\+";
+var specialchar = "!@,#$%&*=|-{}_();:?~`[]/\\+";
 var characterSelection = "";
 
 
@@ -26,10 +26,10 @@ var promptStart = window.confirm('Would You Like Generate a password?');
   }
  } 
 
-// a. password length between8 and 128
-var promptLength = prompt("How many characters in your random password? (Must be 8 - 128)");
+// a. password length between 8 and 128 and validating its a number within that range
+var promptLength = prompt("How many characters would you like your password to be? (Must be 8 - 128)");
   if(isNaN(promptLength)){
-    alert("You must input a number!");
+    alert("You must enter a whole number!");
   return generatePassword()
   }
   if(promptLength<8 || promptLength> 128){
@@ -43,33 +43,31 @@ var promptLower = confirm("Would you like to include lowercase letters?");
 var promptNumbers = confirm("Would you like to include numerical values?");
 var promptSpecial = confirm("Would you like to include any special characters?");
 
-//2. validate input
+// b2. validate input
   if(!promptUpper&&!promptLower&&!promptNumbers&&!promptSpecial){
     alert("You must choose at least 1 character type!");
   return generatePassword()
   }
 
-//3. generate password based on criteria
-  if(promptUpper){
-    characterSelection += uppercase
-  }
-  if(promptLower){
-    characterSelection += lowercase
-  }
-
-  if(promptNumbers) {
-    characterSelection += numbers
-  }
-
-  if(promptSpecial) {
-    characterSelection += specialChar
-  }
-
-for (var i = 0; i < length; i++) {
-  endResult += characterSelection.charAt(Math.floor(Math.random() * characterSelection.length));
+// 3. generate password based on criteria
+if(promptUpper){
+  characterSelection += uppercase
+}
+if(promptLower){
+  characterSelection += lowercase
 }
 
-//4.) display password on page (return)
+if(promptNumbers) {
+  characterSelection += numbers
+}
+
+if(promptSpecial) {
+  characterSelection += specialchar
+}
+
+for (var i = 0; i < promptLength; i++) {
+endResult += characterSelection.charAt(Math.floor(Math.random() * characterSelection.length));
+}
 return endResult;
 
 }
@@ -79,7 +77,7 @@ return endResult;
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-
+  
   passwordText.value = password;
 
 }
