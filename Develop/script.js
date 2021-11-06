@@ -2,6 +2,9 @@
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
+
+
+
 // creating/defining generatePassword function
 function generatePassword() {
   console.log("we click it cuh");
@@ -18,16 +21,19 @@ function generatePassword() {
       }
 
      // a. password length between8 and 128
-  var promptLength = window.prompt('How many charaters would you like your password to be? (Must be 7 < 129)')
-      
-       while (promptLength >= 129 || promptLength <= 7) {
-        if (promptLength >= 129 || promptLength <= 7) {
-      window.alert("Invalid number! Please enter another.");
-      
-      }
+  
+  var goodLength = false
+
+       do {
+       var promptLength = window.prompt('How many characters would you like your password to be? (Must be 7 < 129)')
+       if (promptLength >= 129 || promptLength <= 7) {
+        window.alert("Invalid number! Please enter another.");
       if (promptLength < 129 || promptLength > 7)
-      break;
+      goodLength = true
     }
+       }
+     
+       while (goodLength === false)
     
 
   // b. include lowercase, uppercase, numeric, or special characters?
