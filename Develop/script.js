@@ -7,7 +7,7 @@ var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var lowercase = "abcdefghijklmnopqrstuvwxyz";
 var numbers = "0123456789";
 var specialChar = "!@,#$%&*=|-{}_();:?~`[]/\\+";
-var chosenCharacters = "";
+var characterSelection = "";
 
 
 // creating/defining generatePassword function
@@ -16,11 +16,11 @@ function generatePassword() {
 var endResult = "";
 
 //1. prompt the user for password criteria
-var promptStart = window.confirm('Would You Like Generate a password?')
+var promptStart = window.confirm('Would You Like Generate a password?');
 
   // if user picks "cancel", confirm and refresh page to start
   if (promptStart === false) {
-    var confirmSkip = window.confirm("Are you sure?")
+    var confirmSkip = window.confirm("Are you sure?");
   if (confirmSkip) {
   return "Bye Bye!";
   }
@@ -43,22 +43,36 @@ var promptLower = confirm("Would you like to include lowercase letters?");
 var promptNumbers = confirm("Would you like to include numerical values?");
 var promptSpecial = confirm("Would you like to include any special characters?");
 
-//2.) validate input
+//2. validate input
   if(!promptUpper&&!promptLower&&!promptNumbers&&!promptSpecial){
-    alert("You must at least choose 1 character type!");
-  return confirm("Would you like to include uppercase letters?")
+    alert("You must choose at least 1 character type!");
+  return generatePassword()
   }
 
+//3. generate password based on criteria
+  if(promptUpper){
+    characterSelection += uppercase
+  }
+  if(promptLower){
+    characterSelection += lowercase
+  }
 
+  if(promptNumbers) {
+    characterSelection += numbers
+  }
 
+  if(promptSpecial) {
+    characterSelection += specialChar
+  }
 
-  //3. generate password based on criteria
-  
-  
-  //4.) display password on page (return)
-  return result;
+for (var i = 0; i < length; i++) {
+  endResult += characterSelection.charAt(Math.floor(Math.random() * characterSelection.length));
 }
 
+//4.) display password on page (return)
+return endResult;
+
+}
 
 
 // Write password to the #password input
