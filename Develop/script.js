@@ -50,25 +50,25 @@ var promptSpecial = confirm("Would you like to include any special characters?")
   }
 
 // 3. generate password based on criteria
-if(promptUpper){
-  characterSelection += uppercase
-}
-if(promptLower){
-  characterSelection += lowercase
-}
+  if(promptUpper){
+    characterSelection += uppercase
+  }
+  if(promptLower){
+    characterSelection += lowercase
+  }
 
-if(promptNumbers) {
-  characterSelection += numbers
-}
+  if(promptNumbers) {
+    characterSelection += numbers
+  }
 
-if(promptSpecial) {
-  characterSelection += specialchar
-}
+  if(promptSpecial) {
+    characterSelection += specialchar
+  }
 
-for (var i = 0; i < promptLength; i++) {
-endResult += characterSelection.charAt(Math.floor(Math.random() * characterSelection.length));
-}
-return endResult;
+  for (var i = 0; i < promptLength; i++) {
+  endResult += characterSelection.charAt(Math.floor(Math.random() * characterSelection.length));
+  }
+  return endResult;
 
 }
 
